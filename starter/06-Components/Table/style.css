@@ -28,7 +28,8 @@ body {
 
 table {
   width: 800px;
-  margin: 100px auto;
+  margin: 0 auto;
+  margin-top: 100px;
   border-collapse: collapse;
   font-size: 18px;
 }
@@ -55,4 +56,56 @@ tbody tr:nth-child(odd) {
 
 tbody tr:nth-child(even) {
   background-color: #e9ecef;
+}
+
+/* PAGINATION STYLES */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: #343a40;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-previous,
+.btn-next {
+  color: #087f5b;
+  border: 1px solid #087f5b;
+  width: 48px;
+  height: 48px;
+}
+
+.btn-icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+.btn-active {
+  cursor: default;
+}
+
+.btn-active,
+.btn:hover {
+  background-color: #087f5b;
+  color: #fff;
+}
+
+.dots {
+  color: #868e96;
 }
