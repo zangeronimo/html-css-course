@@ -58,8 +58,32 @@ allLinks.forEach((link) => {
     }
   });
 });
-
 // https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
+
+//////////////////////////////////////////////////////////////////////////////////
+// Sticky navigation
+
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const observer = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    const bodyEl = document.body;
+
+    if (!ent.isIntersecting) {
+      bodyEl.classList.add("sticky");
+    } else {
+      bodyEl.classList.remove("sticky");
+    }
+  },
+  {
+    // In the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+observer.observe(sectionHeroEl);
 
 /*
 .no-flexbox-gap .main-nav-list li:not(:last-child) {
